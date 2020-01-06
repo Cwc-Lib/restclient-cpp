@@ -1,0 +1,33 @@
+-{vFlag}=""
+;-D_PLATFORM_WINDOWS
+>
+-{vIncl}=
+-I ../include/
+-I Curl/include/
+-I Include/
+>
+;Build RestClient
+-c ../source/ -o obj/cpp_{_sPlatform}_{_sOpt}/RestClient/
+-{vIncl}
+>
+;Build RestClient Tests
+-I ../vendor/gtest-1.7.0/include/
+-I ../vendor/jsoncpp-0.10.5/dist/
+-c ../test/ -o obj/cpp_{_sPlatform}_{_sOpt}/Test/
+-{vIncl}
+>
+;Build JSon
+>
+-I ../vendor/jsoncpp-0.10.5/dist/
+-c ../vendor/jsoncpp-0.10.5/dist/ -o obj/cpp_{_sPlatform}_{_sOpt}/jsoncpp/
+>
+;Build GTest
+-I ../vendor/gtest-1.7.0/include/
+-I ../vendor/gtest-1.7.0/
+-c ../vendor/gtest-1.7.0/src/gtest-all.cc  -o obj/cpp_{_sPlatform}_{_sOpt}/gtest/gtest-all.o
+>
+;Generate executable
+-L Curl/lib/
+-o obj/cpp_{_sPlatform}_{_sOpt}/ -#To _out/{_sPlatform}_{_sOpt}/App.* -lcurl
+>
+-#Run
