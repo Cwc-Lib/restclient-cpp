@@ -39,5 +39,7 @@
 -lgdi32
 -lz
 -lssh2
+-lnghttp2
+-lbrotli
 >
 -#Run
