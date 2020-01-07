@@ -31,9 +31,11 @@
 -L Curl/lib/
 -o obj/cpp_{_sPlatform}_{_sOpt}/ -#To _out/{_sPlatform}_{_sOpt}/App.*
 -lcurl 
--lnghttp2
 -lws2_32 
 -lwldap32
 -lcrypt32
+-lssl
+-lcrypto
+-lgdi32
 >
 -#Run
