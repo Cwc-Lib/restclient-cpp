@@ -3,4 +3,4 @@ https://curl.haxx.se/dlwiz/?type=bin&os=Win32&flav=-
 nghttp2:
 https://github.com/Tolar-HashNET/nghttp2_libs
 ssl:
-http://www.wittfella.com/openssl
+https://bintray.com/vszakats/generic/openssl
