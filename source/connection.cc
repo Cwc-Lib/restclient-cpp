@@ -302,6 +302,10 @@ RestClient::Connection::performCurlRequest(const std::string& uri) {
   CURLcode res = CURLE_OK;
   curl_slist* headerList = NULL;
 
+#ifdef DONT_SSL_VERIFYPEER
+  curl_easy_setopt(this->curlHandle, CURLOPT_SSL_VERIFYPEER, FALSE);
+#endif
+
   /** set query URL */
   curl_easy_setopt(this->curlHandle, CURLOPT_URL, url.c_str());
   /** set callback function */

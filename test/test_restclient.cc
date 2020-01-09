@@ -32,15 +32,27 @@ class RestClientTest : public ::testing::Test
 TEST_F(RestClientTest, TestRestClientDELETECode)
 {
   RestClient::Response res = RestClient::del("http://httpbin.org/delete");
+  
   EXPECT_EQ(200, res.code);
+    RestClient::Response res2 = RestClient::del("http://httpbin.org/delete");
+  
+      Json::Value root;
+
+  std::istringstream str(res.body);
+  str >> root;
+//printf("\nResult: %s", str.str().c_str());
+  
 }
 
 TEST_F(RestClientTest, TestRestClientDELETEBody)
 {
   RestClient::Response res = RestClient::del("https://httpbin.org/delete");
   Json::Value root;
+
   std::istringstream str(res.body);
   str >> root;
+  
+//printf("\nResult: %s", str.str().c_str());
 
   EXPECT_EQ("https://httpbin.org/delete", root.get("url", "no url set").asString());
   EXPECT_EQ("restclient-cpp/" RESTCLIENT_VERSION, root["headers"].get("User-Agent", "no url set").asString());

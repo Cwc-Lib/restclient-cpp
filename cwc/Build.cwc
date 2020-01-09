@@ -1,5 +1,6 @@
 -{vFlag}=
 -std=c++11
+-DDONT_SSL_VERIFYPEER
 >
 -{vIncl}=
 -I ../include/
@@ -30,6 +31,7 @@
 -I ../vendor/gtest-1.7.0/
 -c ../vendor/gtest-1.7.0/src/gtest-all.cc  -o obj/cpp_{_sPlatform}_{_sOpt}/gtest/gtest-all.o
 -{vFlag}
+-DGTEST_OS_WINDOWS_MINGW
 >
 ;Generate executable
 -L Curl/lib/
