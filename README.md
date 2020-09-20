@@ -1,3 +1,14 @@
+
+## How to build
+-Grab the last [Cwc](https://github.com/VLiance/Cwc) Release
+
+-Open the executable, the first use it will asscociate **.cwMake** files. *The menu "Config/Set cwc" do the same thing.*
+
+-Download this repo. Some **.cwMake** is avalaible under the cwc folder. Double click on it, the *Toolchains* and *Libs* will be automaticly downloaded, then compiled.
+
+***
+
+
 # REST client for C++
 [![Build Status](https://travis-ci.org/mrtazz/restclient-cpp.svg?branch=master)](https://travis-ci.org/mrtazz/restclient-cpp)
 [![Coverage Status](https://coveralls.io/repos/mrtazz/restclient-cpp/badge.svg?branch=master&service=github)](https://coveralls.io/github/mrtazz/restclient-cpp?branch=master)
